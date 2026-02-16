@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple CRUD</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Student CRUD Application</h2>
+
+<form action="/add" method="POST">
+    <input type="text" name="name" placeholder="Enter Name" required>
+    <input type="email" name="email" placeholder="Enter Email" required>
+    <button type="submit">Add Student</button>
+</form>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+
+    <% students.forEach(student => { %>
+        <tr>
+            <td><%= student.name %></td>
+            <td><%= student.email %></td>
+            <td>
+                <a href="/edit/<%= student._id %>">Edit</a>
+
+                <form action="/delete/<%= student._id %>?_method=DELETE" 
+                      method="POST" 
+                      style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    <% }) %>
+
+</table>
+
+</div>
+</body>
+</html>
