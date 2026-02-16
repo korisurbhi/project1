@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student CRUD</title>
+    <link rel="shortcut icon"
+        href="https://cdn.iconscout.com/icon/premium/png-256-thumb/student-information-icon-svg-download-png-1541868.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLWNd35h21MMFaJHWIEXoMBh-eFqtS5ECKvg&s" alt="logo" />
+            <h1>Student details</h1>
+        </header>
+
+
+        <form id="contact-form" action="/add" method="POST">
+            <label for="name">Name</label>
+            <br>
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <br>
+            <label for="rollNo">Roll No</label>
+            <br>
+            <input type="number" name="rollNo" placeholder="Enter Roll No" required>
+            <br>
+            <label for="email">Email</label>
+            <br>
+            <input type="email" name="email" placeholder="Enter Email" required>
+            <br>
+            <label for="department">Department</label>
+            <br>
+            <input type="text" name="department" placeholder="Enter Department" required>
+            <br>
+            <label for="city">City</label>
+            <br>
+            <input type="text" name="city" placeholder="Enter City" required>
+            <br>
+            <label for="grade">Grade</label>
+            <br>
+            <input type="text" name="grade" placeholder="Enter Grade" required>
+            <br>
+            <button type="submit">Add Student</button>
+
+        </form>
+        <h3><u>Details</u></h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>City</th>
+                <th>Grade</th>
+                <th>Action</th>
+            </tr>
+
+            <% students.forEach(student=> { %>
+                <tr>
+                    <td>
+                        <%= student.name %>
+                    </td>
+                    <td>
+                        <%= student.rollNo %>
+                    </td>
+                    <td>
+                        <%= student.email %>
+                    </td>
+                    <td>
+                        <%= student.department %>
+                    </td>
+                    <td>
+                        <%= student.city %>
+                    </td>
+                    <td>
+                        <%= student.grade %>
+                    </td>
+                    <td>
+                        <a href="/edit/<%= student._id %>">Edit</a>
+
+                        <form action="/delete/<%= student._id %>?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+
+        </table>
+    </div>
+
+</body>
+
+</html>
