@@ -1,14 +1,33 @@
-Student CRUD Webpage
-This is a Student CRUD Web Application built using:
-•	Frontend: HTML, CSS, JavaScript 
-•	Backend: Node.js, Express.js 
-•	Database: MongoDB Template
-•	Engine: EJS
+## Student CRUD Website
 
-Features:
-•	Add Student
-•	View Students
-•	Update Student
-•	Delete Student
+This is a Student CRUD Website built using:
 
-Open http://localhost:5000/
+#### Frontend
+- HTML
+- CSS
+- JavaScript
+
+#### Backend
+- Node.js
+- Express.js
+
+#### Database
+- MongoDB
+
+#### Template Engine
+- EJS
+
+### Features
+
+- Add Student
+- View Students
+- Update Student Details
+- Delete Student Records
+
+### Open Website
+
+http://localhost:5000/
+
+## Author
+
+Surbhi Kori
